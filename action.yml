@@ -1,0 +1,121 @@
+name: "GitHub Streak Card Generator"
+description: "Generates an animated SVG GitHub streak card with themes showing contributions and streaks."
+inputs:
+  USERNAME:
+    description: "GitHub Username to fetch stats for"
+    required: true
+  GITHUB_TOKEN:
+    description: "GitHub Personal Access Token (PAT) or GITHUB_TOKEN"
+    required: true
+  THEME:
+    description: "Theme name (e.g., default, tokyonight, dracula)"
+    required: false
+    default: "default"
+  OUTPUT_PATH:
+    description: "Path where the SVG will be saved"
+    required: false
+    default: "github-streak.svg"
+  ANIMATED:
+    description: "Enable animations"
+    required: false
+    default: "true"
+  LOCALE:
+    description: "Locale for translations (e.g., en, ja, ko, zh_Hans)"
+    required: false
+    default: "en"
+  DATE_FORMAT:
+    description: "Date format string (e.g., 'M j[, Y]', 'd/m[/Y]', 'j M[, Y]')"
+    required: false
+    default: "M j[, Y]"
+  BORDER_RADIUS:
+    description: "Border radius of the card"
+    required: false
+    default: "4.5"
+  HIDE_BORDER:
+    description: "Hide the card border"
+    required: false
+    default: "false"
+  CARD_WIDTH:
+    description: "Width of the card"
+    required: false
+    default: "495"
+  CARD_HEIGHT:
+    description: "Height of the card"
+    required: false
+    default: "195"
+  NUMBER_FORMAT:
+    description: "Number format: 'full' for full numbers, 'short' for abbreviated (K, M, B)"
+    required: false
+    default: "full"
+  STROKE_TYPE:
+    description: "Ring stroke type: 'round' or 'butt'"
+    required: false
+    default: "round"
+  FIRE:
+    description: "Override fire color"
+    required: false
+  RING:
+    description: "Override ring color"
+    required: false
+  CURR_STREAK_NUM:
+    description: "Override current streak number color"
+    required: false
+  SIDE_NUMS:
+    description: "Override side numbers color"
+    required: false
+  CURR_STREAK_LABEL:
+    description: "Override current streak label color"
+    required: false
+  SIDE_LABELS:
+    description: "Override side labels color"
+    required: false
+  DATES:
+    description: "Override dates color"
+    required: false
+  BACKGROUND:
+    description: "Override background color or gradient"
+    required: false
+  STROKE:
+    description: "Override border/stroke color"
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2.1.2
+      with:
+        bun-version: latest
+
+    - name: Install Dependencies
+      shell: bash
+      run: bun install
+
+    - name: Generate Card
+      shell: bash
+      run: bun run src/action.ts
+      env:
+        INPUT_USERNAME: ${{ inputs.USERNAME }}
+        INPUT_GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        INPUT_THEME: ${{ inputs.THEME }}
+        INPUT_OUTPUT_PATH: ${{ inputs.OUTPUT_PATH }}
+        INPUT_ANIMATED: ${{ inputs.ANIMATED }}
+        INPUT_LOCALE: ${{ inputs.LOCALE }}
+        INPUT_DATE_FORMAT: ${{ inputs.DATE_FORMAT }}
+        INPUT_BORDER_RADIUS: ${{ inputs.BORDER_RADIUS }}
+        INPUT_HIDE_BORDER: ${{ inputs.HIDE_BORDER }}
+        INPUT_CARD_WIDTH: ${{ inputs.CARD_WIDTH }}
+        INPUT_CARD_HEIGHT: ${{ inputs.CARD_HEIGHT }}
+        INPUT_NUMBER_FORMAT: ${{ inputs.NUMBER_FORMAT }}
+        INPUT_STROKE_TYPE: ${{ inputs.STROKE_TYPE }}
+        INPUT_FIRE: ${{ inputs.FIRE }}
+        INPUT_RING: ${{ inputs.RING }}
+        INPUT_CURR_STREAK_NUM: ${{ inputs.CURR_STREAK_NUM }}
+        INPUT_SIDE_NUMS: ${{ inputs.SIDE_NUMS }}
+        INPUT_CURR_STREAK_LABEL: ${{ inputs.CURR_STREAK_LABEL }}
+        INPUT_SIDE_LABELS: ${{ inputs.SIDE_LABELS }}
+        INPUT_DATES: ${{ inputs.DATES }}
+        INPUT_BACKGROUND: ${{ inputs.BACKGROUND }}
+        INPUT_STROKE: ${{ inputs.STROKE }}
+branding:
+  icon: "activity"
+  color: "orange"
