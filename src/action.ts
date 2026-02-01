@@ -12,7 +12,7 @@ async function run() {
     const outputPath = process.env.INPUT_OUTPUT_PATH || "github-streak.svg";
     const animated = process.env.INPUT_ANIMATED !== "false";
 
-    // New inputs matching PHP implementation
+    // New inputs
     const locale = process.env.INPUT_LOCALE || "en";
     const dateFormat = process.env.INPUT_DATE_FORMAT || "M j[, Y]";
     const borderRadius = parseFloat(process.env.INPUT_BORDER_RADIUS || "4.5");

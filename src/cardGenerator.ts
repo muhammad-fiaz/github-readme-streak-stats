@@ -97,7 +97,7 @@ export interface CardOptions {
 }
 
 /**
- * Format a date range string matching PHP implementation
+ * Format a date range string
  */
 function formatDateRange(
   start: string,
