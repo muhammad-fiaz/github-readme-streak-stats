@@ -1,28 +1,28 @@
 {
-	"name": "github-readme-streak-stats",
-	"version": "1.0.0",
-	"author": "muhammad-fiaz",
-	"license": "MIT",
-	"module": "index.ts",
-	"type": "module",
-	"private": true,
-	"scripts": {
-		"start": "bun run index.ts",
-		"format": "prettier --write .",
-		"check": "prettier --check .",
-		"lint": "biome check .",
-		"lint:fix": "biome check --write ."
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.3.13",
-		"@types/bun": "latest",
-		"prettier": "3.8.1"
-	},
-	"peerDependencies": {
-		"typescript": "^5"
-	},
-	"dependencies": {
-		"@actions/core": "^2.0.2",
-		"@actions/github": "^7.0.0"
-	}
+  "name": "github-readme-streak-stats",
+  "version": "1.0.0",
+  "author": "muhammad-fiaz",
+  "license": "MIT",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "format": "prettier --write .",
+    "check": "prettier --check .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.13",
+    "@types/bun": "latest",
+    "prettier": "3.8.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@actions/core": "^2.0.2",
+    "@actions/github": "^7.0.0"
+  }
 }

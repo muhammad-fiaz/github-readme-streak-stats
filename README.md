@@ -2,7 +2,6 @@
 
 Display your total contributions, current streak, and longest streak on your GitHub profile README with beautiful themes and animations!
 
-
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/muhammad-fiaz/github-readme-streak-stats)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
