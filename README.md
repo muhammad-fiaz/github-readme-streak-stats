@@ -6,6 +6,10 @@
 
 Display your total contributions, current streak, and longest streak on your GitHub profile README with beautiful themes and animations!
 
+# Demo
+
+<img  alt="demo image" src="https://github.com/user-attachments/assets/47b6d233-2211-4563-b738-26e340ecff5a" />
+
 
 ## Features
 
