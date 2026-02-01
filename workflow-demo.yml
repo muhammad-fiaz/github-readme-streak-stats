@@ -1,0 +1,33 @@
+name: Demo Streak Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Run daily at midnight
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Generate Streak Stats
+        uses: muhammad-fiaz/github-readme-streak-stats@v1.0.0
+        with:
+          USERNAME: muhammad-fiaz # Replace with desired GitHub username
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # Optional: for higher rate limits or permission to access private repos
+          THEME: default # You can customize the theme
+          OUTPUT_PATH: github-streak-stats.svg # Output file path
+
+      - name: Commit and Push to Demo Branch
+        run: |
+          BRANCH_NAME="streak-stats-demo"
+          git checkout -b "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add github-streak-stats.svg
+          git commit -m "Update demo streak stats" || git commit --amend -m "Update demo streak stats"
+          git push origin "$BRANCH_NAME" --force
+          echo "Pushed to branch: $BRANCH_NAME"

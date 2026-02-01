@@ -96,6 +96,10 @@ Once the `output` branch is created (after the first run of the workflow), you c
 
 > **Note**: Replace `YOUR_USERNAME` and `YOUR_REPO` with your actual details.
 
+## Demo
+
+A demo workflow is available in [workflow-demo.yml](workflow-demo.yml) that showcases the action running daily to generate streak stats and push them to a demo branch.
+
 ## Inputs
 
 | Input           | Description                             | Required | Default             |
