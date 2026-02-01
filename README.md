@@ -6,6 +6,11 @@
 
 Display your total contributions, current streak, and longest streak on your GitHub profile README with beautiful themes and animations!
 
+# Demo
+
+<img  alt="demo image" src="https://github.com/user-attachments/assets/47b6d233-2211-4563-b738-26e340ecff5a" />
+
+
 ## Features
 
 - **150+ Predefined Themes** - From popular editor themes to custom gradients
@@ -40,7 +45,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - name: Generate Streak Stats (Dark)
         uses: muhammad-fiaz/github-readme-streak-stats@v1.0.0
@@ -59,7 +64,7 @@ jobs:
           OUTPUT_PATH: github-streak-stats-light.svg
 
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v4.2.0
         with:
           target_branch: output
           build_dir: .
