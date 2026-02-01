@@ -6,7 +6,6 @@
 
 Display your total contributions, current streak, and longest streak on your GitHub profile README with beautiful themes and animations!
 
-
 ## Features
 
 - **150+ Predefined Themes** - From popular editor themes to custom gradients

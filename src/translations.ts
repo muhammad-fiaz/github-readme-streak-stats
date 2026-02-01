@@ -1,7 +1,6 @@
 /**
  * Locales and Translations
  *
- * Ported from PHP github-readme-streak-stats
  */
 
 export interface TranslationStrings {

@@ -318,7 +318,7 @@ export function renderRing(
 }
 
 /**
- * Render current streak number with animation (matching PHP)
+ * Render current streak number with animation
  */
 export function renderStreakNumber(
   value: string,

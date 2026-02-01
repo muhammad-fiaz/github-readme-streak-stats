@@ -1,4 +1,3 @@
-import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { type CardOptions, generateProfileCard } from "./cardGenerator.ts";
 import { fetchGitHubData } from "./github-api.ts";
@@ -82,7 +81,7 @@ async function run() {
 
     // Save File
     const fullPath = resolve(process.cwd(), outputPath);
-    await writeFile(fullPath, svg);
+    await Bun.write(fullPath, svg);
     console.log(`✅ Saved streak card to ${fullPath}`);
   } catch (error) {
     console.error("❌ Action failed:", error);

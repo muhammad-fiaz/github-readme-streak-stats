@@ -3,7 +3,6 @@
  *
  * Generates an animated SVG streak card with theme support.
  * Shows: Total Contributions, Current Streak, Longest Streak
- * Matches PHP github-readme-streak-stats implementation exactly
  */
 
 import { parseBackground } from "./parseBackground.ts";
@@ -118,7 +117,7 @@ function formatDateRange(
 }
 
 /**
- * Generate the full SVG streak card (matching PHP card.php implementation)
+ * Generate the full SVG streak card
  */
 export function generateProfileCard(
   data: StreakCardData,
@@ -188,7 +187,7 @@ interface ContentOptions {
 }
 
 /**
- * Generate the streak stats content (matching PHP card.php layout exactly)
+ * Generate the streak stats content
  */
 function generateStreakContent(
   ctx: SVGRenderContext,
@@ -202,17 +201,17 @@ function generateStreakContent(
   // Get translations
   const translations = getTranslations(locale);
 
-  // Height offset for cards taller than 195px (like PHP implementation)
+  // Height offset for cards taller than 195px
   const baseHeight = 195;
   const heightOffset = (height - baseHeight) / 2;
 
-  // Calculate section positions (PHP: sectionWidth = cardWidth / 3)
+  // Calculate section positions
   const sectionWidth = width / 3;
   const leftX = sectionWidth / 2;
   const centerX = width / 2;
   const rightX = width - sectionWidth / 2;
 
-  // PHP-style Y-positions - Numbers at top, labels below, dates at bottom
+  // Y-positions - Numbers at top, labels below, dates at bottom
   // Side sections (left & right): Number -> Label -> Date
   const sideNumberY = 79 + heightOffset; // Big number at top
   const sideLabelY = 130 + heightOffset; // Label below number
@@ -225,7 +224,7 @@ function generateStreakContent(
   const centerLabelY = 130 + heightOffset; // "Current Streak" below ring
   const centerDateY = 158 + heightOffset; // Date at bottom
 
-  // Animation delays (matching PHP exactly)
+  // Animation delays
   const animDelays = {
     ring: 0.4,
     fire: 0.6,

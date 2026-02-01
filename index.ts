@@ -5,7 +5,7 @@
  * Run with: bun run index.ts
  */
 
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import {
   generateProfileCard,
@@ -86,7 +86,7 @@ async function main() {
   for (const themeName of samplesToGenerate) {
     const svg = generateProfileCard(sampleData, { theme: themeName });
     const filename = `card-${themeName}.svg`;
-    await writeFile(join(outputDir, filename), svg);
+    await Bun.write(join(outputDir, filename), svg);
     console.log(`   ✅ Generated: ${filename}`);
   }
 
