@@ -45,7 +45,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - name: Generate Streak Stats (Dark)
         uses: muhammad-fiaz/github-readme-streak-stats@v1.0.0
@@ -64,7 +64,7 @@ jobs:
           OUTPUT_PATH: github-streak-stats-light.svg
 
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v4.2.0
         with:
           target_branch: output
           build_dir: .
