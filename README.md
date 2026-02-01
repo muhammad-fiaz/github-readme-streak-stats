@@ -10,7 +10,6 @@ Display your total contributions, current streak, and longest streak on your Git
 
 <img  alt="demo image" src="https://github.com/user-attachments/assets/47b6d233-2211-4563-b738-26e340ecff5a" />
 
-
 ## Features
 
 - **150+ Predefined Themes** - From popular editor themes to custom gradients
