@@ -88,16 +88,16 @@ runs:
 
     - name: Install Dependencies
       shell: bash
-      run: bun install
+      run: cd "$GITHUB_ACTION_PATH" && bun install
 
     - name: Generate Card
       shell: bash
-      run: bun run src/action.ts
+      run: cd "$GITHUB_ACTION_PATH" && bun run src/action.ts
       env:
         INPUT_USERNAME: ${{ inputs.USERNAME }}
         INPUT_GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         INPUT_THEME: ${{ inputs.THEME }}
-        INPUT_OUTPUT_PATH: ${{ inputs.OUTPUT_PATH }}
+        INPUT_OUTPUT_PATH: ${{ github.workspace }}/${{ inputs.OUTPUT_PATH }}
         INPUT_ANIMATED: ${{ inputs.ANIMATED }}
         INPUT_LOCALE: ${{ inputs.LOCALE }}
         INPUT_DATE_FORMAT: ${{ inputs.DATE_FORMAT }}
