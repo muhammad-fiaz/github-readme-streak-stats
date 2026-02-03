@@ -1,6 +1,6 @@
 {
   "name": "github-readme-streak-stats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "muhammad-fiaz",
   "license": "MIT",
   "module": "index.ts",

@@ -1,6 +1,6 @@
 # GitHub Readme Streak Stats
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/muhammad-fiaz/github-readme-streak-stats)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/muhammad-fiaz/github-readme-streak-stats)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Test](https://github.com/muhammad-fiaz/github-readme-streak-stats/actions/workflows/test.yml/badge.svg)](https://github.com/muhammad-fiaz/github-readme-streak-stats/actions/workflows/test.yml)
 
@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Generate Streak Stats (Dark)
-        uses: muhammad-fiaz/github-readme-streak-stats@v1.0.0
+        uses: muhammad-fiaz/github-readme-streak-stats@v1.0.1
         with:
           USERNAME: ${{ secrets.USER_NAME }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -55,7 +55,7 @@ jobs:
           OUTPUT_PATH: github-streak-stats-dark.svg
 
       - name: Generate Streak Stats (Light)
-        uses: muhammad-fiaz/github-readme-streak-stats@v1.0.0
+        uses: muhammad-fiaz/github-readme-streak-stats@v1.0.1
         with:
           USERNAME: ${{ secrets.USER_NAME }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
